@@ -1,0 +1,12 @@
+*.log
+
+/__pycache__/
+__pycache__/
+
+.env
+env
+
+.venv/
+venv/
+
+respostas.txt
