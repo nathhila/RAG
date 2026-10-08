@@ -27,10 +27,11 @@ A estrutura foi mantida simples para facilitar a compreensão do fluxo.
 
 ```text
 rag/exe3/
-├── agent.py                 # lógica principal do RAG e geração de respostas
 ├── main.py                 # ponto de entrada para uso do exemplo
 ├── requirements.txt        # dependências do projeto
-├── respostas.txt           # respostas geradas pela aplicação
+├── respostas.txt  
+├── agente/
+│   ├── agent.py           # lógica principal do RAG e geração de respostas
 ├── database/
 │   ├── db.py               # conexão com o banco e funções de consulta
 │   ├── db_agent.py         # geração de embeddings das tabelas
