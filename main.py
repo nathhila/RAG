@@ -1,32 +1,24 @@
-from agent import Produto, Departamento, Funcionario
-from dotenv import load_dotenv 
+from agent import Departamento, Funcionario, Produto
 
 
-def pesquisa(input_user):
-
-    if input_user not in search_type:
-            print('não posso te ajudar infelizmente')
-    
-    else:
-        if input_user == 'produto':
-            entrada = str(input('digite sua pergunta: '))
-            Produto.search_embedding(entrada)
-        
-        elif input_user == 'departamento':
-            entrada = str(input('digite sua pergunta: '))
-            Departamento.search_embedding(entrada)
-
-        elif input_user == 'funcionario':
-            entrada = str(input('digite sua pergunta: '))
-            Funcionario.search_embedding(entrada)
-
-        else:
-            print('nao existem informações sobre o que voce deseja saber, sinto muito')
-    
-if __name__ == '__main__':
+SEARCH_TYPES = {"produto", "departamento", "funcionario"}
 
 
-    load_dotenv()
-    search_type = ['produto', 'departamento', 'funcionario']
-    input_user = str(input('qual tabela voce quer analisar?: '))
-    pesquisa(input_user)
+def pesquisa(input_user: str):
+    if input_user not in SEARCH_TYPES:
+        print("Tabela inválida. Escolha entre: produto, departamento ou funcionario.")
+        return
+
+    pergunta = input("Digite sua pergunta: ")
+
+    if input_user == "produto":
+        Produto.search_embedding(pergunta)
+    elif input_user == "departamento":
+        Departamento.search_embedding(pergunta)
+    elif input_user == "funcionario":
+        Funcionario.search_embedding(pergunta)
+
+
+if __name__ == "__main__":
+    tabela = input("Qual tabela você quer analisar? [produto/departamento/funcionario]: ").strip().lower()
+    pesquisa(tabela)
