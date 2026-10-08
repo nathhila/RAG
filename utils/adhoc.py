@@ -1,8 +1,8 @@
 from sqlalchemy import distinct, func
 from sqlalchemy.orm import sessionmaker
 
-from db import engine
-from models import Departamento, Produto
+from database.db import engine
+from database.models import Departamento, Produto
 
 
 def count_funcionario(session):
