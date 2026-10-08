@@ -188,9 +188,7 @@ class Funcionario(BuscaGeral):
 
         response = MODEL.invoke(_build_prompt(funcionario_data, input_text))
         answer = _as_text(response)
-        _save_answer(answer)
-        print(answer)
-        
+        _save_answer(answer)        
         return answer
 
 

@@ -1,4 +1,4 @@
-from agent import Departamento, Funcionario, Produto
+from agente.agent import Departamento, Funcionario, Produto
 
 
 SEARCH_TYPES = {"produto", "departamento", "funcionario"}
